@@ -5,6 +5,8 @@
  */
 package lobang.Entity;
 
+import java.util.Calendar;
+
 /**
  *
  * @author Thiara
@@ -14,6 +16,8 @@ public class Applicant {
     private String username;
     private String password;
     private String name;
+    private char gender;
+    private Calendar dob;
     private String address;
     private String bankAcct;
     private String bankBranch;
@@ -21,10 +25,12 @@ public class Applicant {
     private String photo;
     private int rankpoint;
 
-    public Applicant(String username, String password, String name, String address, String bankAcct, String bankBranch, String phone, String photo, int rankpoint) {
+    public Applicant(String username, String password, String name, char gender, Calendar dob, String address, String bankAcct, String bankBranch, String phone, String photo, int rankpoint) {
         this.username = username;
         this.password = password;
         this.name = name;
+        this.gender = gender;
+        this.dob = dob;
         this.address = address;
         this.bankAcct = bankAcct;
         this.bankBranch = bankBranch;
@@ -104,4 +110,13 @@ public class Applicant {
     public void setRankPoint(int rankpoint) {
         this.rankpoint = rankpoint;
     }
+    
+    public char getGender(){
+        return this.gender;
+    }
+    
+    public void setGender(char gender){
+        this.gender = gender;
+    }
+    
 }

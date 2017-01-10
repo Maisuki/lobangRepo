@@ -20,8 +20,9 @@ public class Employer {
     private String phone;
     private long review;
     private String cURL;
+    private boolean isVerified;
 
-    public Employer(String username, String address, String password, String name, String cName, String photo, long review, String cURL, String Phone) {
+    public Employer(String username, String address, String password, String name, String cName, String photo, long review, String cURL, String Phone,boolean isVerified) {
         this.username = username;
         this.password = password;
         this.name = name;
@@ -31,6 +32,7 @@ public class Employer {
         this.phone = phone;
         this.review = review;
         this.cURL = cURL;
+        this.isVerified = isVerified;
     }
 
     public String getUsername() {
@@ -103,5 +105,12 @@ public class Employer {
     
     public void setReview(long review){
         this.review = review;
+    }
+    public boolean getVerification(){
+        return this.isVerified;
+    }
+    
+    public void setVerification(boolean isVerified){
+        this.isVerified = isVerified;
     }
 }
