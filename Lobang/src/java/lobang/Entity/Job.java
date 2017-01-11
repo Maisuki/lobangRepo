@@ -21,8 +21,9 @@ public class Job {
     private String location;
     private String dateTime;
     private int pax;
+    private int hour;
 
-    public Job(String jobID, String jobDescription, String jobScope, int pay, String paymentMode, String location, String dateTime, int pax) {
+    public Job(String jobID, String jobDescription, String jobScope, int pay, String paymentMode, String location, String dateTime, int pax, int hour) {
         this.jobID = jobID;
         this.jobDescription = jobDescription;
         this.jobScope = jobScope;
@@ -31,7 +32,7 @@ public class Job {
         this.location = location;
         this.dateTime = dateTime;
         this.pax = pax;
-        
+        this.hour = hour;
     }
     
     public String getJobID(){
@@ -89,6 +90,13 @@ public class Job {
     
     public void setPax(int pax){
         this.pax = pax;
+    }
+    public int getHour(){
+        return this.hour;
+    }
+    
+    public void setHour(int hour){
+        this.hour = hour;
     }
     
 }

@@ -119,4 +119,11 @@ public class Applicant {
         this.gender = gender;
     }
     
+    public Calendar getdob(){
+        return dob;
+    }
+    
+    public void setdob(Calendar dob){
+        this.dob = dob;
+    }
 }
