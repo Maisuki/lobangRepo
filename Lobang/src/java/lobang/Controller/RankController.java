@@ -5,6 +5,10 @@
  */
 package lobang.Controller;
 
+import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import lobang.Dao.*;
 import lobang.Entity.Applicant;
 import lobang.Entity.Job;
@@ -17,16 +21,23 @@ public class RankController {
     
     public static void rankUpdate(String username){
         JobApplicantHistoryDAO jahdao = new JobApplicantHistoryDAO();
-        ArrayList<Job> jList = jahdao.retrieveJobApplicantHistory();
+        ArrayList<Job> jList = null;
+        jList = jahdao.retrieveJobApplicantHistory(username);
         ApplicantDAO aDAO = new ApplicantDAO();
-        Applicant a = aDAO.retrieveApplicantByUsername(username);
+        Applicant a = null;
+        try {
+            a = aDAO.retrieveApplicantByUsername(username);
+        } catch (ParseException ex) {
+            Logger.getLogger(RankController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         int currRankPoint = a.getRankPoint();
-        int pointGain = 0;
+        long pointGain = 0;
         for(Job j : jList){
             pointGain = j.getPay()*j.getHour();
             currRankPoint += pointGain;
             pointGain = 0;
         }
+        a.setRankPoint((int) pointGain);
     }
     
 }

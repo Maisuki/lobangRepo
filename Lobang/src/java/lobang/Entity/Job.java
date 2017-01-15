@@ -16,14 +16,14 @@ public class Job {
     private String jobID;
     private String jobDescription;
     private String jobScope;
-    private int pay;
+    private long pay;
     private String paymentMode;
     private String location;
     private String dateTime;
     private int pax;
     private int hour;
 
-    public Job(String jobID, String jobDescription, String jobScope, int pay, String paymentMode, String location, String dateTime, int pax, int hour) {
+    public Job(String jobID, String jobDescription, String jobScope, long pay, String paymentMode, String location, String dateTime, int pax, int hour) {
         this.jobID = jobID;
         this.jobDescription = jobDescription;
         this.jobScope = jobScope;
@@ -56,10 +56,10 @@ public class Job {
         this.jobScope = jobScope;
     }
         
-    public int getPay(){
+    public long getPay(){
         return this.pay;
     }
-    public void setPay(int pay){
+    public void setPay(long pay){
         this.pay = pay;
     }
         

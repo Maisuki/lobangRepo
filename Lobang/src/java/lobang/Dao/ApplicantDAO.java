@@ -39,7 +39,7 @@ public class ApplicantDAO {
 
     public static ArrayList<Applicant> retrieveAllApplicant() throws ParseException {
 
-        Applicant patient;
+        Applicant applicant;
         ArrayList<Applicant> aList = new ArrayList<Applicant>();
 
         try {
@@ -62,7 +62,7 @@ public class ApplicantDAO {
                 phone = rs.getString("phone");
                 photo = rs.getString("photo");
                 rankpoint = rs.getInt("rankpoint");
-                Applicant applicant = new Applicant(username, password, name, gender, dob, address, bankAcct, bankBranch, phone, photo, rankpoint);
+                applicant = new Applicant(username, password, name, gender, dob, address, bankAcct, bankBranch, phone, photo, rankpoint);
                 aList.add(applicant);
 
             }
